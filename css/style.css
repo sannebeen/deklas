@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Headtext';
+    src: url('../fonts/headtext.ttf');
+}
+
+@font-face {
+    font-family: 'Architex';
+    src: url('../fonts/Architex.ttf');
+}
+
+@font-face {
+    font-family: 'schoolnew';
+    src: url('../fonts/schoolnew.ttf');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    background-image: url('../img/background_tekst.jpg');
+    background-repeat: repeat;
+}
+
+.fontBlueBig {
+    font-family: 'headtext', sans-serif;
+    font-size: 4.2em;
+    color: #5a8887;
+}
+
+.fontBlue {
+    font-family: 'schoolnew', sans-serif;
+    font-size: 1.8em;
+    color: #5a8887;
+}
+
+.fontBlueSmall {
+    font-family: 'headtext', sans-serif;
+    font-size: 1.5em;
+    color: #5a8887;
+}
+
+.fontBlack {
+    font-family: 'headtext', sans-serif;
+    font-size: 2.2em;
+    color: #000000;
+}
+
+.fontWhite {
+    font-family: 'schoolnew', sans-serif;
+    font-size: 3.2em;
+    color: #ffffff;
+}
+
+.fontArchitex {
+    font-family: 'architex', sans-serif;
+    font-size: 3.2em;
+    color: #ffffff;
+}
+
+.fontBrief {
+    font-family: 'roboto', sans-serif;
+    font-size: 2.2em;
+    color: #000000;
+
+}
+.fontArchitexSpaced {
+    font-family: 'architex', sans-serif;
+    font-size: 3.2em;
+    color: #ffffff;
+    letter-spacing: 10px;
+}
+
+.blueColor {
+    color: #5a8887;
+}
+
+.wellFix {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #5a8887;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.top-margin { margin-top:20px; }
+
+a {
+    color: inherit;
+}
+
+a:hover, a:focus {
+    color: indianred;
+    text-decoration: none;
+}
+
+.panel-body .col-md-6 {
+    padding: 0;
+}
+
+.well .row .col-md-3 .btn-block:hover {
+    background-color: white;
+    border-color: #BFBFBF;
+    cursor: auto;
+}
