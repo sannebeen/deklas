@@ -17,6 +17,9 @@
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
 
+    <!-- Calendar css -->
+    <link href="css/fullcalendar.css" rel='stylesheet />
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -109,8 +112,8 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Services
-                    <small>Subheading</small>
+                <h1 class="page-header">Kalender
+                    <small>Mooi he</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
@@ -124,7 +127,9 @@
         <!-- Image Header -->
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="http://placehold.it/1200x300" alt="">
+              <div id='calendar'></div>
+
+                <!-- <img class="img-responsive" src="http://placehold.it/1200x300" alt=""> -->
             </div>
         </div>
         <!-- /.row -->
@@ -253,7 +258,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service One</h4>
@@ -265,7 +270,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-car fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Two</h4>
@@ -277,7 +282,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-support fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Three</h4>
@@ -291,7 +296,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-database fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Four</h4>
@@ -303,7 +308,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-bomb fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Five</h4>
@@ -315,7 +320,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Six</h4>
@@ -329,7 +334,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Seven</h4>
@@ -341,7 +346,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-space-shuttle fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Eight</h4>
@@ -353,7 +358,7 @@
                         <span class="fa-stack fa-2x">
                               <i class="fa fa-circle fa-stack-2x text-primary"></i>
                               <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
-                        </span> 
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="media-heading">Service Nine</h4>
@@ -383,6 +388,30 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Calendar js -->
+    <script src="js/moment.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script>
+        $(document).ready(function() {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+            // put your options and callbacks here
+            firstDay: 1,
+            events: [
+                {
+                title: "Beau Jarig",
+                start: "2015-06-27"
+              }
+            ]
+
+        })
+
+    });
+    </script>
+
 
 </body>
 
