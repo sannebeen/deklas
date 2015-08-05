@@ -17,6 +17,9 @@
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
 
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="css/ihover.css">
+
     <!--Overwrites-->
     <link href="css/style.css" rel="stylesheet">
 
@@ -33,7 +36,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -108,9 +110,36 @@
 
     <!-- Page Content -->
     <div class="container">
+      <div class="col-lg-12">
+          <h1 class="page-header">
+              Foto's
+          </h1>
+      </div>
 
+      <div class="row">
+          <!--Copy to add new portfolio item -->
+          <div class="col-md-4 col-sm-6">
+              <div class="ih-item square effect6 from_top_and_bottom">
+                  <a href="img/schoolreis/IMG_20110518_100941.jpg" data-toggle="lightbox" data-gallery="schoolreisamerika" data-title="Reisje naar Amerika" >
+                      <div class="img"><img src="img/schoolreis/IMG_20110518_100941.jpg"></div>
+                      <div class="info">
+                          <h3>Amerika</h3>
+                          <p>Dope as fuck</p>
+                          <p style="margin-top: -40px">
+                   <span class="fa-stack" style="font-size: 18px;">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-plus fa-stack-1x"></i>
+              </span>
+                          </p>
+                      </div>
+                  </a></div>
+          </div>
+          <!-- End copy -->
 
+        </div>
 
+        <div class="hidden" id="hiddenPhotos">
+        </div>
     <hr>
 
     <!-- Footer -->
@@ -131,25 +160,40 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <!--Lightbox-->
+    <script src="js/ekko-lightbox.min.js"></script>
+
     <script>
-        var _getAllFilesFromFolder = function(dir) {
-            $.ajax({
-                url: dir,
-                success: function(data){
-                    $(data).find("td > a").each(function(){
-                        // will loop through
-                        alert("Found a file: " + $(this).attr("href"));
-                    });
-                }
-            });
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        var _getAllImagesFromFolder = function(dir, galleryname, gallerytitle) {
+
+          var fileextension = [".png", ".jpg"];
+          $.ajax({
+              url: dir,
+              success: function (data){
+                $(data).find("a:contains(" + (fileextension[0]) + "), a:contains(" + (fileextension[1]) + ")").each(function () {
+                      var filename = this.href.replace(window.location.host, "").replace("http:///", "");
+                      $("#hiddenPhotos").append($('<a href=' + dir + filename + ' data-toggle="lightbox" data-gallery=' + galleryname + ' data-title=' + gallerytitle.replace(/ /g, "&nbsp;") + '></a>'));
+                  });
+                  document.getElementById(elementID).onclick = function (event) {
+                      event = event || window.event;
+                      var target = event.target || event.srcElement,
+                          link = target.src ? target.parentNode : target,
+                          options = {index: link, event: event},
+                          links = this.getElementsByTagName('a');
+                      blueimp.Gallery(links, options);
+                  };
+              }
+          });
         };
 
-        _getAllFilesFromFolder("img/schoolreis");
+        // Copy and paste to use function below
+        _getAllImagesFromFolder("img/schoolreis/", "schoolreisamerika", "Reisje naar Amerika");
     </script>
 </body>
-
 </html>
