@@ -100,8 +100,23 @@ a:hover, a:focus {
     padding: 0;
 }
 
+.well .panel-body {
+    padding: 0;
+}
+
+
 .well .row .col-md-3 .btn-block:hover {
     background-color: white;
     border-color: #BFBFBF;
     cursor: auto;
+}
+
+.panel-defaultFix {
+    border-color: #ddd;
+    margin-right: 13px;
+
+}
+
+.questionFix .col-md-12 {
+    margin-top: -5px;
 }
